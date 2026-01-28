@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Say What?! - Slang Translation Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Say What?!</h1>
+        <p class="description">Guess the real meaning of these literally translated slang phrases and idioms!</p>
+        
+        <div class="game-area">
+            <div id="phraseDisplay" class="phrase-box">
+                <p>Click "Start Game" to begin!</p>
+            </div>
+            
+            <button id="startBtn" class="btn-primary">Start Game</button>
+            
+            <div id="inputArea" class="input-area" style="display: none;">
+                <input type="text" id="guessInput" placeholder="Enter your guess for the meaning...">
+                <button id="submitBtn" class="btn-submit">Submit Guess</button>
+                <button id="hintBtn" class="btn-hint">Get Hint</button>
+            </div>
+            
+            <div id="resultArea" class="result-area">
+                <!-- Results will appear here -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
