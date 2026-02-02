@@ -19,7 +19,7 @@ const phrases = [
         original: "Avoir d'autres chats à fouetter",
         meaning: "To have other things to do",
         language: "French",
-        keywords: ["busy", "occupied", "things to do", "priorities", "matters"],
+        keywords: ["busy", "occupied", "things to do", "priorities", "matters", "to do other things"],
         hints: [
             "It's about being busy with other tasks",
             "You have more important matters",

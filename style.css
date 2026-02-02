@@ -80,10 +80,11 @@ h1 {
 
 .phrase-box {
     background-color: #e8f4f8;
-    padding: 30px;
+    padding: 40px;
     border-radius: 10px;
-    margin-bottom: 20px;
-    min-height: 120px;
+    margin-bottom: 25px;
+    min-height: 180px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
