@@ -5,6 +5,7 @@ const phrases = [
         original: "Tomaten auf den Augen haben",
         meaning: "To be oblivious or not see something obvious",
         language: "German",
+        keywords: ["oblivious", "blind", "obvious", "miss", "see", "unaware", "notice"],
         hints: [
             "It's about not seeing clearly",
             "Think about vision problems",
@@ -18,6 +19,7 @@ const phrases = [
         original: "Avoir d'autres chats à fouetter",
         meaning: "To have other things to do",
         language: "French",
+        keywords: ["busy", "occupied", "things to do", "priorities", "matters"],
         hints: [
             "It's about being busy with other tasks",
             "You have more important matters",
@@ -31,6 +33,7 @@ const phrases = [
         original: "Att glida in på en räkmacka",
         meaning: "To have an easy life without working hard",
         language: "Swedish",
+        keywords: ["easy", "privilege", "lucky", "effort", "unearned", "fortunate"],
         hints: [
             "It's about having things easy",
             "No effort required",
@@ -44,6 +47,7 @@ const phrases = [
         original: "No tengo pasta",
         meaning: "I don't have money",
         language: "Spanish",
+        keywords: ["money", "broke", "poor", "cash", "afford", "penniless", "funds"],
         hints: [
             "Pasta is slang for something else",
             "It's about financial problems",
@@ -57,6 +61,7 @@ const phrases = [
         original: "Κάθομαι στα αυγά μου",
         meaning: "To be lazy or do nothing",
         language: "Greek",
+        keywords: ["lazy", "idle", "inactive", "nothing", "unproductive", "sloth"],
         hints: [
             "It's about inactivity",
             "Think of a bird sitting still",
@@ -70,6 +75,7 @@ const phrases = [
         original: "A da cu mucul",
         meaning: "To deceive or trick someone",
         language: "Romanian",
+        keywords: ["deceive", "trick", "fool", "cheat", "lie", "dishonest", "manipulate"],
         hints: [
             "It's about dishonesty",
             "Someone is being fooled",
@@ -139,10 +145,10 @@ function checkGuess() {
     
     attemptsLeft--;
     
-    // Simple check if guess contains key words from the meaning
-    if (guess.includes('oblivious') || guess.includes('busy') || guess.includes('easy') || 
-        guess.includes('money') || guess.includes('lazy') || guess.includes('deceive') || 
-        guess.includes('trick')) {
+    // Check if guess contains any keyword from the current phrase
+    const isCorrect = currentPhrase.keywords.some(keyword => guess.includes(keyword.toLowerCase()));
+    
+    if (isCorrect) {
         resultArea.innerHTML = `
             <div class="success">
                 <h3>🎉 Correct!</h3>
