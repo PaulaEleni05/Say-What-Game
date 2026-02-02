@@ -119,7 +119,8 @@ function startGame() {
     attemptsLeft = 5;
     currentPhrase.hintIndex = 0;
     
-    // Update the display
+    // Show and update the display
+    phraseDisplay.style.display = 'flex';
     phraseDisplay.innerHTML = `
         <h2>Literal Translation:</h2>
         <p class="phrase-text">"${currentPhrase.literal}"</p>
