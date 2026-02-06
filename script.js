@@ -25,6 +25,7 @@ const phrases = [
         original: "Tomaten auf den Augen haben",
         meaning: "To be oblivious or not see something obvious",
         language: "German",
+        languageCode: "de",
         keywords: ["oblivious", "blind", "obvious", "miss", "see", "unaware", "notice"],
         hints: [
             "It's about not seeing clearly",
@@ -39,6 +40,7 @@ const phrases = [
         original: "Avoir d'autres chats à fouetter",
         meaning: "To have other things to do",
         language: "French",
+        languageCode: "fr",
         keywords: ["busy", "occupied", "things to do", "priorities", "matters", "to do other things"],
         hints: [
             "It's about being busy with other tasks",
@@ -53,6 +55,7 @@ const phrases = [
         original: "Att glida in på en räkmacka",
         meaning: "To have an easy life without working hard",
         language: "Swedish",
+        languageCode: "sv",
         keywords: ["easy", "privilege", "lucky", "effort", "unearned", "fortunate"],
         hints: [
             "It's about having things easy",
@@ -67,6 +70,7 @@ const phrases = [
         original: "No tengo pasta",
         meaning: "I don't have money",
         language: "Spanish",
+        languageCode: "es",
         keywords: ["money", "broke", "poor", "cash", "afford", "penniless", "funds"],
         hints: [
             "Pasta is slang for something else",
@@ -81,6 +85,7 @@ const phrases = [
         original: "Κάθομαι στα αυγά μου",
         meaning: "To be lazy or do nothing",
         language: "Greek",
+        languageCode: "el",
         keywords: ["lazy", "idle", "inactive", "nothing", "unproductive", "sloth"],
         hints: [
             "It's about inactivity",
@@ -95,6 +100,7 @@ const phrases = [
         original: "A da cu mucul",
         meaning: "To deceive or trick someone",
         language: "Romanian",
+        languageCode: "ro",
         keywords: ["deceive", "trick", "fool", "cheat", "lie", "dishonest", "manipulate"],
         hints: [
             "It's about dishonesty",
