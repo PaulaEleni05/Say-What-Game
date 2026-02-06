@@ -1,21 +1,35 @@
 // Async function to translate a phrase using LibreTranslate API
 async function translatePhrase(phrase, sourceLanguage) {
-    const url = 'https://libretranslate.com/translate';
-    
-    const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            q: phrase,
-            source: sourceLanguage,
-            target: 'en'
-        })
-    });
-    
-    const data = await response.json();
-    return data.translatedText;
+    try {
+        const url = 'https://libretranslate.com/translate';
+        
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                q: phrase,
+                source: sourceLanguage,
+                target: 'en',
+                format: 'text'
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        console.log('Translation response:', data);
+        
+        // Check different possible property names
+        return data.translatedText || data.translated || data.translation || phrase;
+    } catch (error) {
+        console.error('Translation error:', error);
+        // Return the original phrase if translation fails
+        return phrase;
+    }
 }
 
 // Sample phrases with literal translations
@@ -155,7 +169,12 @@ async function startGame() {
     startBtn.style.display = 'none';
     
     // Get translation from API
-    const translatedText = await translatePhrase(currentPhrase.original, currentPhrase.languageCode);
+    let translatedText = await translatePhrase(currentPhrase.original, currentPhrase.languageCode);
+    
+    // If translation returns the original phrase unchanged or is empty, use the hardcoded literal
+    if (translatedText === currentPhrase.original || !translatedText || translatedText === 'undefined') {
+        translatedText = currentPhrase.literal;
+    }
     
     // Update the display with translated text
     phraseDisplay.innerHTML = `
