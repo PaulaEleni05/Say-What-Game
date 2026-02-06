@@ -1,3 +1,23 @@
+// Async function to translate a phrase using LibreTranslate API
+async function translatePhrase(phrase, sourceLanguage) {
+    const url = 'https://libretranslate.com/translate';
+    
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            q: phrase,
+            source: sourceLanguage,
+            target: 'en'
+        })
+    });
+    
+    const data = await response.json();
+    return data.translatedText;
+}
+
 // Sample phrases with literal translations
 const phrases = [
     {
