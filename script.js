@@ -139,23 +139,33 @@ hintBtn.addEventListener('click', function() {
     showHint();
 });
 
-function startGame() {
+async function startGame() {
     // Pick a random phrase
     currentPhrase = phrases[Math.floor(Math.random() * phrases.length)];
     attemptsLeft = 5;
     currentPhrase.hintIndex = 0;
     
-    // Show and update the display
+    // Show loading message
     phraseDisplay.style.display = 'flex';
     phraseDisplay.innerHTML = `
+        <p class="phrase-text">Translating phrase...</p>
+    `;
+    
+    // Hide start button
+    startBtn.style.display = 'none';
+    
+    // Get translation from API
+    const translatedText = await translatePhrase(currentPhrase.original, currentPhrase.languageCode);
+    
+    // Update the display with translated text
+    phraseDisplay.innerHTML = `
         <h2>Literal Translation:</h2>
-        <p class="phrase-text">"${currentPhrase.literal}"</p>
+        <p class="phrase-text">"${translatedText}"</p>
         <p class="attempts">Attempts left: ${attemptsLeft}</p>
     `;
     
-    // Show input area and hide start button
+    // Show input area
     inputArea.style.display = 'block';
-    startBtn.style.display = 'none';
     resultArea.innerHTML = '';
     guessInput.value = '';
     guessInput.focus();
