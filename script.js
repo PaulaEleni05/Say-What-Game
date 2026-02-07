@@ -325,6 +325,7 @@ const submitBtn = document.getElementById('submitBtn');
 const hintBtn = document.getElementById('hintBtn');
 const resultArea = document.getElementById('resultArea');
 const scoreValue = document.getElementById('scoreValue');
+const restartBtn = document.getElementById('restartBtn');
 
 // Start game button click handler
 startBtn.addEventListener('click', function() {
@@ -340,6 +341,33 @@ submitBtn.addEventListener('click', function() {
 hintBtn.addEventListener('click', function() {
     showHint();
 });
+
+// Restart button click handler
+restartBtn.addEventListener('click', function() {
+    restartGame();
+});
+
+function restartGame() {
+    // Reset score
+    score = 0;
+    scoreValue.textContent = score;
+    
+    // Add animation to score
+    scoreValue.classList.add('score-update');
+    setTimeout(() => {
+        scoreValue.classList.remove('score-update');
+    }, 400);
+    
+    // Reset the game state
+    phraseDisplay.style.display = 'none';
+    inputArea.style.display = 'none';
+    resultArea.innerHTML = '';
+    startBtn.style.display = 'block';
+    startBtn.textContent = 'Start Game';
+    guessInput.value = '';
+    currentPhrase = null;
+    attemptsLeft = 5;
+}
 
 async function startGame() {
     // Pick a random phrase
