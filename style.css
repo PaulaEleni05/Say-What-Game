@@ -250,3 +250,13 @@ button {
     border-radius: 8px;
     font-weight: bold;
 }
+
+.fallback-notice {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    margin: 10px 0;
+    display: inline-block;
+}

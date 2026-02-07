@@ -24,11 +24,17 @@ async function translatePhrase(phrase, sourceLanguage) {
         console.log('Translation response:', data);
         
         // Check different possible property names
-        return data.translatedText || data.translated || data.translation || phrase;
+        const translatedText = data.translatedText || data.translated || data.translation;
+        
+        if (translatedText) {
+            return { text: translatedText, failed: false };
+        } else {
+            return { text: phrase, failed: true };
+        }
     } catch (error) {
         console.error('Translation error:', error);
         // Return the original phrase if translation fails
-        return phrase;
+        return { text: phrase, failed: true };
     }
 }
 
@@ -349,17 +355,23 @@ async function startGame() {
     startBtn.style.display = 'none';
     
     // Get translation from API
-    let translatedText = await translatePhrase(currentPhrase.original, currentPhrase.languageCode);
+    const translationResult = await translatePhrase(currentPhrase.original, currentPhrase.languageCode);
+    let translatedText = translationResult.text;
+    const apiFailed = translationResult.failed;
     
     // If translation returns the original phrase unchanged or is empty, use the hardcoded literal
     if (translatedText === currentPhrase.original || !translatedText || translatedText === 'undefined') {
         translatedText = currentPhrase.literal;
     }
     
+    // Build fallback message if API failed
+    const fallbackMessage = apiFailed ? '<p class="fallback-notice">⚠️ Live translation unavailable — using fallback translation.</p>' : '';
+    
     // Update the display with translated text
     phraseDisplay.innerHTML = `
         <h2>Literal Translation:</h2>
         <p class="phrase-text">"${translatedText}"</p>
+        ${fallbackMessage}
         <p class="attempts">Attempts left: ${attemptsLeft}</p>
     `;
     
