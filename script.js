@@ -314,6 +314,7 @@ const phrases = [
 
 let currentPhrase = null;
 let attemptsLeft = 5;
+let score = 0;
 
 // Get DOM elements
 const startBtn = document.getElementById('startBtn');
@@ -323,6 +324,7 @@ const guessInput = document.getElementById('guessInput');
 const submitBtn = document.getElementById('submitBtn');
 const hintBtn = document.getElementById('hintBtn');
 const resultArea = document.getElementById('resultArea');
+const scoreValue = document.getElementById('scoreValue');
 
 // Start game button click handler
 startBtn.addEventListener('click', function() {
@@ -397,9 +399,19 @@ function checkGuess() {
     const isCorrect = currentPhrase.keywords.some(keyword => guess.includes(keyword.toLowerCase()));
     
     if (isCorrect) {
+        // Increment score
+        score++;
+        scoreValue.textContent = score;
+        
+        // Add animation
+        scoreValue.classList.add('score-update');
+        setTimeout(() => {
+            scoreValue.classList.remove('score-update');
+        }, 400);
+        
         resultArea.innerHTML = `
             <div class="success">
-                <h3>🎉 Correct!</h3>
+                <h3>🎉 Correct! +1 Point</h3>
                 <p><strong>Actual meaning:</strong> ${currentPhrase.meaning}</p>
                 <p><strong>Language:</strong> ${currentPhrase.language}</p>
                 <p><strong>Original phrase:</strong> "${currentPhrase.original}"</p>
