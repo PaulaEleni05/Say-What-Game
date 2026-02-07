@@ -123,6 +123,186 @@ const phrases = [
             "Playing a trick on someone",
             "Making a fool of someone"
         ]
+    },
+    {
+        literal: "I shit in the milk",
+        original: "Me cago en la leche",
+        meaning: "An expression of anger or frustration",
+        language: "Spanish",
+        languageCode: "es",
+        keywords: ["anger", "angry", "frustration", "frustrated", "annoyed", "upset", "mad"],
+        hints: [
+            "It's an emotional outburst",
+            "Something made you very upset",
+            "Think about strong negative feelings",
+            "You're expressing irritation",
+            "Like saying 'damn it' or 'for crying out loud'"
+        ]
+    },
+    {
+        literal: "To have a tomcat",
+        original: "Avoir un chat dans la gorge",
+        meaning: "To have a frog in your throat (hoarse voice)",
+        language: "French",
+        languageCode: "fr",
+        keywords: ["hoarse", "throat", "voice", "raspy", "scratchy", "sick"],
+        hints: [
+            "It's about how you sound",
+            "Your voice isn't normal",
+            "Think about being sick",
+            "Something's wrong with your throat",
+            "You can't speak clearly"
+        ]
+    },
+    {
+        literal: "To give someone pumpkins",
+        original: "Dar calabazas",
+        meaning: "To reject someone romantically",
+        language: "Spanish",
+        languageCode: "es",
+        keywords: ["reject", "rejection", "dump", "break up", "refuse", "turn down"],
+        hints: [
+            "It's about relationships",
+            "Someone doesn't want to date you",
+            "Think about romantic rejection",
+            "Getting turned down",
+            "Breaking up with someone"
+        ]
+    },
+    {
+        literal: "It's raining pipe stems",
+        original: "Het regent pijpenstelen",
+        meaning: "It's raining very heavily",
+        language: "Dutch",
+        languageCode: "nl",
+        keywords: ["rain", "raining", "heavy", "pouring", "storm", "downpour"],
+        hints: [
+            "It's about weather",
+            "Water is falling from the sky",
+            "Think about a storm",
+            "Very intense precipitation",
+            "Like 'raining cats and dogs'"
+        ]
+    },
+    {
+        literal: "To hang noodles on someone's ears",
+        original: "Вешать лапшу на уши",
+        meaning: "To lie or deceive someone",
+        language: "Russian",
+        languageCode: "ru",
+        keywords: ["lie", "lying", "deceive", "trick", "mislead", "fool", "dishonest"],
+        hints: [
+            "It's about telling untruths",
+            "Someone is being dishonest",
+            "Think about deception",
+            "Not telling the truth",
+            "Making someone believe something false"
+        ]
+    },
+    {
+        literal: "To give water to the goose",
+        original: "A da apă la gâște",
+        meaning: "To do something pointless or useless",
+        language: "Romanian",
+        languageCode: "ro",
+        keywords: ["pointless", "useless", "waste", "meaningless", "futile", "unnecessary"],
+        hints: [
+            "It's about wasted effort",
+            "What you're doing has no purpose",
+            "Think about something that doesn't matter",
+            "A useless activity",
+            "Like spinning your wheels"
+        ]
+    },
+    {
+        literal: "To be with the tongue out",
+        original: "A fi cu limba scoasă",
+        meaning: "To be exhausted or out of breath",
+        language: "Romanian",
+        languageCode: "ro",
+        keywords: ["exhausted", "tired", "worn out", "breathless", "drained", "fatigued"],
+        hints: [
+            "It's about physical state",
+            "You've worked too hard",
+            "Think about running out of energy",
+            "Completely wiped out",
+            "Can barely catch your breath"
+        ]
+    },
+    {
+        literal: "To give someone pumpkin",
+        original: "A da cuiva dovleac",
+        meaning: "To fail someone or give a bad grade",
+        language: "Romanian",
+        languageCode: "ro",
+        keywords: ["fail", "failing", "flunk", "bad grade", "unsuccessful", "reject"],
+        hints: [
+            "It's about school or exams",
+            "Someone didn't pass",
+            "Think about academic failure",
+            "Getting a bad mark",
+            "Not meeting the standard"
+        ]
+    },
+    {
+        literal: "To not have hair on the tongue",
+        original: "Non avere peli sulla lingua",
+        meaning: "To speak bluntly or frankly",
+        language: "Italian",
+        languageCode: "it",
+        keywords: ["blunt", "frank", "honest", "direct", "straightforward", "candid"],
+        hints: [
+            "It's about how you communicate",
+            "You say what you think",
+            "Think about being honest",
+            "Not sugarcoating things",
+            "Speaking your mind directly"
+        ]
+    },
+    {
+        literal: "To throw the house out the window",
+        original: "Tirar a casa pela janela",
+        meaning: "To spend money extravagantly",
+        language: "Portuguese",
+        languageCode: "pt",
+        keywords: ["spend", "spending", "extravagant", "splurge", "waste", "expensive"],
+        hints: [
+            "It's about money",
+            "You're not being frugal",
+            "Think about spending a lot",
+            "Being wasteful with cash",
+            "Living lavishly"
+        ]
+    },
+    {
+        literal: "To sell salad",
+        original: "Vendre de la salade",
+        meaning: "To tell lies or nonsense",
+        language: "French",
+        languageCode: "fr",
+        keywords: ["lie", "lying", "nonsense", "bullshit", "deceive", "trick", "false"],
+        hints: [
+            "It's about honesty",
+            "Someone isn't telling the truth",
+            "Think about making things up",
+            "Saying things that aren't true",
+            "Talking rubbish"
+        ]
+    },
+    {
+        literal: "To have owls in the moss",
+        original: "Ugler i mosen",
+        meaning: "Something suspicious is going on",
+        language: "Danish",
+        languageCode: "da",
+        keywords: ["suspicious", "fishy", "shady", "wrong", "dubious", "questionable"],
+        hints: [
+            "Something doesn't seem right",
+            "You sense trouble",
+            "Think about hidden problems",
+            "Something sketchy is happening",
+            "Not everything is as it seems"
+        ]
     }
 ];
 
