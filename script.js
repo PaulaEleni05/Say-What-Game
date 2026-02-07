@@ -338,6 +338,19 @@ submitBtn.addEventListener('click', function() {
     checkGuess();
 });
 
+// Enter key press on guess inputs
+guessInput.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        checkGuess();
+    }
+});
+
+languageGuess.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        checkGuess();
+    }
+});
+
 // Hint button click handler
 hintBtn.addEventListener('click', function() {
     showHint();
