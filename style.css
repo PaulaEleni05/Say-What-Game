@@ -270,6 +270,39 @@ button {
     border-color: #3498db;
 }
 
+.language-guess-section {
+    background: rgba(255, 243, 205, 0.3);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 2px dashed #f39c12;
+}
+
+.language-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #e67e22;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+#languageGuess {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.95rem;
+    border: 2px solid #f39c12;
+    border-radius: 6px;
+    text-align: center;
+    background: white;
+}
+
+#languageGuess:focus {
+    outline: none;
+    border-color: #e67e22;
+    box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.1);
+}
+
 .result-area {
     margin-top: 20px;
     padding: 20px;
@@ -310,6 +343,40 @@ button {
 .success p {
     margin: 8px 0;
     text-align: left;
+}
+
+.bonus {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    color: #856404;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 2px solid #f39c12;
+    margin: 10px 0;
+    text-align: center;
+    animation: bonusPop 0.4s ease-out;
+}
+
+@keyframes bonusPop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.no-bonus {
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+    padding: 5px;
 }
 
 .fail {

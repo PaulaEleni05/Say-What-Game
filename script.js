@@ -321,6 +321,7 @@ const startBtn = document.getElementById('startBtn');
 const phraseDisplay = document.getElementById('phraseDisplay');
 const inputArea = document.getElementById('inputArea');
 const guessInput = document.getElementById('guessInput');
+const languageGuess = document.getElementById('languageGuess');
 const submitBtn = document.getElementById('submitBtn');
 const hintBtn = document.getElementById('hintBtn');
 const resultArea = document.getElementById('resultArea');
@@ -409,11 +410,13 @@ async function startGame() {
     inputArea.style.display = 'block';
     resultArea.innerHTML = '';
     guessInput.value = '';
+    languageGuess.value = '';
     guessInput.focus();
 }
 
 function checkGuess() {
     const guess = guessInput.value.trim().toLowerCase();
+    const languageGuessValue = languageGuess.value.trim().toLowerCase();
     const actualMeaning = currentPhrase.meaning.toLowerCase();
     
     if (guess === '') {
@@ -426,9 +429,23 @@ function checkGuess() {
     // Check if guess contains any keyword from the current phrase
     const isCorrect = currentPhrase.keywords.some(keyword => guess.includes(keyword.toLowerCase()));
     
+    // Check if language guess is correct
+    const languageCorrect = languageGuessValue !== '' && languageGuessValue === currentPhrase.language.toLowerCase();
+    
     if (isCorrect) {
+        // Calculate points
+        let pointsEarned = 1;
+        let bonusMessage = '';
+        
+        if (languageCorrect) {
+            pointsEarned += 1;
+            bonusMessage = '<p class="bonus">🌟 Language Bonus: +1 Point!</p>';
+        } else if (languageGuessValue !== '') {
+            bonusMessage = `<p class="no-bonus">Language guess was incorrect (${languageGuessValue})</p>`;
+        }
+        
         // Increment score
-        score++;
+        score += pointsEarned;
         scoreValue.textContent = score;
         
         // Add animation
@@ -439,7 +456,8 @@ function checkGuess() {
         
         resultArea.innerHTML = `
             <div class="success">
-                <h3>🎉 Correct! +1 Point</h3>
+                <h3>🎉 Correct! +${pointsEarned} Point${pointsEarned > 1 ? 's' : ''}</h3>
+                ${bonusMessage}
                 <p><strong>Actual meaning:</strong> ${currentPhrase.meaning}</p>
                 <p><strong>Language:</strong> ${currentPhrase.language}</p>
                 <p><strong>Original phrase:</strong> "${currentPhrase.original}"</p>
@@ -451,6 +469,7 @@ function checkGuess() {
         phraseDisplay.querySelector('.attempts').textContent = `Attempts left: ${attemptsLeft}`;
         resultArea.innerHTML = `<p class="error">Not quite! Try again. (${attemptsLeft} attempts left)</p>`;
         guessInput.value = '';
+        languageGuess.value = '';
         guessInput.focus();
     } else {
         resultArea.innerHTML = `
